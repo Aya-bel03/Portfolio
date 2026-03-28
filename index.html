@@ -1,69 +1,336 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mon Portfolio - Aya Khadidja</title>
-  <link rel="icon" type="image/png" href="/Portfolio/favicon.png" />
-  <style>
-    body { font-family: 'Arial', sans-serif; background-color: #f8f0fa; color: #333; margin: 0; padding: 0; }
-    header { background-color: #9b59b6; color: white; padding: 30px; text-align: center; }
-    h1 { font-size: 32px; margin-bottom: 5px; }
-    p { font-size: 18px; margin-top: 0; }
-    section { padding: 20px; max-width: 800px; margin: auto; }
-    h2::before { display: inline-block; margin-right: 8px; font-size: 20px; }
-    h2 { color: #9b59b6; margin-top: 30px; transition: color 0.3s ease; }
-    h2:hover { color: #8e44ad; }
-    h2:nth-of-type(1)::before { content: "🧑‍💻"; }
-    h2:nth-of-type(2)::before { content: "📁"; }
-    h2:nth-of-type(3)::before { content: "💡"; }
-    ul { line-height: 1.6; padding-left: 20px; }
-    .contact { background-color: #e0cfe7; padding: 15px; margin-top: 30px; text-align: center; border-top: 2px dashed #9b59b6; }
-    .contact a { text-decoration: none; color: #9b59b6; margin: 0 10px; transition: color 0.3s, transform 0.2s ease; }
-    .contact a:hover { color: #8e44ad; transform: scale(1.05); }
-    .img-center { text-align: center; margin-top: 30px; }
-    .img-center img { border-radius: 50%; width: 130px; }
-    @media screen and (max-width: 600px) {
-      header { padding: 20px; }
-      h1 { font-size: 24px; }
-      p { font-size: 16px; }
-      section { padding: 15px; }
-      h2 { font-size: 18px; }
-      ul { padding-left: 10px; }
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aya Khadidja — Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <header>
-    <h1>Aya Khadidja</h1>
-    <p>Développeuse Web | Designer | Étudiante en Informatique</p>
+<body class="light-mode">
+
+  <!-- CURSOR -->
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+
+  <!-- BACKGROUND MESH -->
+  <div class="mesh-container">
+    <div class="ball ball-1"></div>
+    <div class="ball ball-2"></div>
+    <div class="ball ball-3"></div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div id="progress-bar"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <a href="#" class="nav-logo">AK.</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <div class="avail-badge">
+        <span class="avail-dot"></span>
+        Disponible
+      </div>
+      <button id="theme-switch" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
   </header>
 
-  <div class="img-center">
-    <img src="favicon.png" alt="Aya Khadidja" />
-  </div>
+  <main>
 
-  <section>
-    <h2>À propos de moi</h2>
-    <p>Je suis une étudiante passionnée par le développement web et la programmation. J’aime créer des sites simples, jolis et fonctionnels.</p>
-    <h2>Mes Projets</h2>
-    <ul>
-      <li>🎮 Jeu Snake en Python avec Pygame</li>
-      <li>🗂️ Application To-Do en JavaScript</li>
-    </ul>
-    <h2>Mes Compétences</h2>
-    <ul>
-      <li>💻 HTML / CSS / JavaScript</li>
-      <li>🐍 Python / Pygame</li>
-    </ul>
-  </section>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <span class="hero-eyebrow reveal">
+          <span class="eyebrow-dot"></span>
+          Développeuse Web &amp; Designer — Alger, Algérie
+        </span>
+        <h1 class="hero-name">
+          <span class="name-line reveal-line"><span class="word">Aya</span></span>
+          <span class="name-line reveal-line delay-1"><span class="word italic">Khadidja.</span></span>
+        </h1>
+        <p class="hero-role reveal delay-2">Full-Stack Developer &amp; Creative Designer</p>
+        <p class="hero-desc reveal delay-3">Étudiante passionnée qui transforme chaque idée<br>en une expérience numérique soignée.</p>
+        <div class="hero-ctas reveal delay-4">
+          <a href="#projects" class="btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn-ghost">Me contacter</a>
+        </div>
+      </div>
+      <div class="hero-deco">
+        <div class="deco-ring"></div>
+        <div class="deco-ring deco-ring-2"></div>
+        <div class="avatar-circle">
+          <img src="favicon.png" alt="Aya Khadidja" class="avatar-img"/>
+        </div>
+        <div class="deco-tag tag-1">
+          <span class="tag-label">Projets</span>
+          <span class="tag-value">5+</span>
+        </div>
+        <div class="deco-tag tag-2">
+          <span class="tag-label">Stack</span>
+          <span class="tag-value">Web &amp; Python</span>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-  <div class="contact">
-    <p>
-      📧 <a href="mailto:ayakhadidja03@gmail.com">ayakhadidja03@gmail.com</a> |
-      💼 <a href="#">LinkedIn</a> |
-      🔗 <a href="https://github.com/Aya-bel03" target="_blank">GitHub</a>
-    </p>
-    <p>📨 <a href="contact.html">Contactez-moi</a></p>
-  </div>
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span><i class="fab fa-html5"></i> HTML5</span><span class="sep">✦</span>
+        <span><i class="fab fa-css3-alt"></i> CSS3</span><span class="sep">✦</span>
+        <span><i class="fab fa-js"></i> JavaScript</span><span class="sep">✦</span>
+        <span><i class="fab fa-python"></i> Python</span><span class="sep">✦</span>
+        <span><i class="fab fa-php"></i> PHP</span><span class="sep">✦</span>
+        <span><i class="fas fa-database"></i> SQL Server</span><span class="sep">✦</span>
+        <span><i class="fab fa-react"></i> React</span><span class="sep">✦</span>
+        <span><i class="fab fa-github"></i> GitHub</span><span class="sep">✦</span>
+        <span><i class="fab fa-html5"></i> HTML5</span><span class="sep">✦</span>
+        <span><i class="fab fa-css3-alt"></i> CSS3</span><span class="sep">✦</span>
+        <span><i class="fab fa-js"></i> JavaScript</span><span class="sep">✦</span>
+        <span><i class="fab fa-python"></i> Python</span><span class="sep">✦</span>
+        <span><i class="fab fa-php"></i> PHP</span><span class="sep">✦</span>
+        <span><i class="fas fa-database"></i> SQL Server</span><span class="sep">✦</span>
+        <span><i class="fab fa-react"></i> React</span><span class="sep">✦</span>
+        <span><i class="fab fa-github"></i> GitHub</span><span class="sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="sec">
+      <div class="sec-header reveal">
+        <span class="sec-num">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-item card-full reveal">
+          <p class="big-quote">Je crée des interfaces qui mélangent <em>la rigueur du code</em> et <em>l'élégance du design.</em> Chaque projet est pour moi une occasion d'innover et de simplifier l'interaction homme-machine.</p>
+        </div>
+        <div class="bento-item card-info reveal delay-1">
+          <span class="label">Infos</span>
+          <div class="info-list">
+            <div class="info-row"><span class="ik">Localisation</span><span class="iv">Alger, Algérie</span></div>
+            <div class="info-row"><span class="ik">Email</span><span class="iv">ayakhadidja03@gmail.com</span></div>
+            <div class="info-row"><span class="ik">GitHub</span><span class="iv">Aya-bel03</span></div>
+            <div class="info-row"><span class="ik">Statut</span><span class="iv available">Disponible ✦</span></div>
+          </div>
+        </div>
+        <div class="bento-item card-stat reveal delay-2">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Projets réalisés</span>
+        </div>
+        <div class="bento-item card-stat reveal delay-3">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Technologies maîtrisées</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="sec">
+      <div class="sec-header reveal">
+        <span class="sec-num">02</span>
+        <h2 class="section-title">My Skills</h2>
+      </div>
+      <div class="skills-wrapper reveal">
+        <div class="skills-track">
+          <span><i class="fab fa-html5"></i> HTML5</span>
+          <span><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span><i class="fab fa-js"></i> JavaScript</span>
+          <span><i class="fab fa-react"></i> React</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fab fa-php"></i> PHP</span>
+          <span><i class="fas fa-database"></i> SQL Server</span>
+          <span><i class="fab fa-github"></i> GitHub</span>
+          <span><i class="fab fa-html5"></i> HTML5</span>
+          <span><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span><i class="fab fa-js"></i> JavaScript</span>
+          <span><i class="fab fa-react"></i> React</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fab fa-php"></i> PHP</span>
+          <span><i class="fas fa-database"></i> SQL Server</span>
+          <span><i class="fab fa-github"></i> GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="sec">
+      <div class="sec-header reveal">
+        <span class="sec-num">03</span>
+        <h2 class="section-title">My Projects</h2>
+      </div>
+      <div class="bento-grid">
+
+        <div class="bento-item card-med reveal">
+          <div class="proj-top">
+            <span class="label">Python · Pygame</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <div class="proj-icon">🎮</div>
+          <h3>Snake Game</h3>
+          <p>Jeu Snake classique avec Pygame, gestion des scores, collisions et niveaux progressifs.</p>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span>Python</span><span>Pygame</span><span>OOP</span>
+            </div>
+            <a href="https://github.com/Aya-bel03" target="_blank" class="proj-link">Code ↗</a>
+          </div>
+        </div>
+
+        <div class="bento-item card-med reveal delay-1">
+          <div class="proj-top">
+            <span class="label">PHP · SQL</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <div class="proj-icon">🗂️</div>
+          <h3>To-Do Manager</h3>
+          <p>Gestionnaire de tâches complet avec authentification, CRUD et persistance SQL Server.</p>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span>PHP</span><span>HTML/CSS</span><span>SQL</span>
+            </div>
+            <a href="https://github.com/Aya-bel03" target="_blank" class="proj-link">Code ↗</a>
+          </div>
+        </div>
+
+        <div class="bento-item card-med reveal delay-2">
+          <div class="proj-top">
+            <span class="label">Web · Frontend</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <div class="proj-icon">🏨</div>
+          <h3>Luxury Hotel</h3>
+          <p>Site vitrine d'un hôtel moderne avec design élégant et animations fluides.</p>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <a href="https://github.com/Aya-bel03" target="_blank" class="proj-link">Code ↗</a>
+          </div>
+        </div>
+
+        <div class="bento-item card-med reveal delay-1">
+          <div class="proj-top">
+            <span class="label">Web · Frontend</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <div class="proj-icon">✈️</div>
+          <h3>Travel Agency</h3>
+          <p>Site d'agence de voyage moderne avec galerie interactive et formulaire de réservation.</p>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <a href="https://github.com/Aya-bel03" target="_blank" class="proj-link">Code ↗</a>
+          </div>
+        </div>
+
+        <div class="bento-item card-med reveal delay-2">
+          <div class="proj-top">
+            <span class="label">Web · Frontend</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <div class="proj-icon">👗</div>
+          <h3>Boutique de Rêve</h3>
+          <p>E-shop de mode avec catalogue produits, filtres et interface soignée.</p>
+          <div class="proj-footer">
+            <div class="proj-pills">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <a href="https://github.com/Aya-bel03" target="_blank" class="proj-link">Code ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="sec">
+      <div class="sec-header reveal">
+        <span class="sec-num">04</span>
+        <h2 class="section-title">Let's Talk!</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="bento-item contact-card reveal">
+          <span class="label">Envoyez-moi un message</span>
+          <form action="https://formspree.io/f/mjkobwyn" method="POST">
+            <div class="input-row">
+              <div class="input-group">
+                <input type="text" name="nom" placeholder=" " required/>
+                <label>Nom</label>
+              </div>
+              <div class="input-group">
+                <input type="email" name="email" placeholder=" " required/>
+                <label>Email</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <textarea name="message" rows="5" placeholder=" " required></textarea>
+              <label>Message</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span>Envoyer le message</span>
+              <span class="btn-arrow">↗</span>
+            </button>
+          </form>
+        </div>
+        <div class="contact-side">
+          <div class="bento-item info-card reveal delay-1">
+            <span class="label">Retrouvez-moi sur</span>
+            <div class="social-links">
+              <a href="https://github.com/Aya-bel03" target="_blank" class="social-item">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+                <span class="social-arr">↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/khadidja-belogbane-071b53371" target="_blank" class="social-item">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+                <span class="social-arr">↗</span>
+              </a>
+              <a href="mailto:ayakhadidja03@gmail.com" class="social-item">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+                <span class="social-arr">↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="bento-item cta-card reveal delay-2">
+            <p class="cta-text">Disponible pour des<br/><em>projets freelance</em><br/>ou collaborations.</p>
+            <a href="mailto:ayakhadidja03@gmail.com" class="btn-primary" style="margin-top:1.5rem;display:inline-block">Écrire un email ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">AK.</span>
+      <span class="footer-copy">© 2026 Made with ❤️ by <strong>Aya Khadidja</strong></span>
+      <div class="footer-links">
+        <a href="https://github.com/Aya-bel03" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/khadidja-belogbane-071b53371" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ayakhadidja03@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
