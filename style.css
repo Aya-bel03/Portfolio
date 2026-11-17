@@ -1,29 +1,6 @@
-/* ═══════════════════════════════════════
-   AYA KHADIDJA — PORTFOLIO STYLE
-   Light/Dark — Bento Grid — Artistic
-═══════════════════════════════════════ */
 
 /* ── VARIABLES ── */
 :root {
-  --bg:          #F5F2EC;
-  --bg2:         #EDE9DF;
-  --card:        rgba(255,255,255,0.60);
-  --card-border: rgba(155,89,182,0.14);
-  --text:        #1A1714;
-  --text-dim:    #8A8480;
-  --accent:      #9b59b6;
-  --accent-l:    #d7b8e8;
-  --accent-glow: rgba(155,89,182,0.18);
-  --ball-1:      #e9d5f5;
-  --ball-2:      #f5d5e9;
-  --ball-3:      #d5e5f5;
-  --header-bg:   rgba(245,242,236,0.82);
-  --shadow:      0 4px 32px rgba(155,89,182,0.10);
-  --radius:      24px;
-  --radius-sm:   14px;
-}
-
-.dark-mode {
   --bg:          #0A0A0C;
   --bg2:         #111116;
   --card:        rgba(255,255,255,0.04);
@@ -38,6 +15,25 @@
   --ball-3:      #0a1a3a;
   --header-bg:   rgba(10,10,12,0.85);
   --shadow:      0 4px 32px rgba(0,0,0,0.4);
+  --radius:      24px;
+  --radius-sm:   14px;
+}
+
+.dark-mode {
+  --bg:          #F5F2EC;
+  --bg2:         #EDE9DF;
+  --card:        rgba(255,255,255,0.60);
+  --card-border: rgba(155,89,182,0.14);
+  --text:        #1A1714;
+  --text-dim:    #8A8480;
+  --accent:      #9b59b6;
+  --accent-l:    #d7b8e8;
+  --accent-glow: rgba(155,89,182,0.18);
+  --ball-1:      #e9d5f5;
+  --ball-2:      #f5d5e9;
+  --ball-3:      #d5e5f5;
+  --header-bg:   rgba(245,242,236,0.82);
+  --shadow:      0 4px 32px rgba(155,89,182,0.10);
 }
 
 /* ── RESET ── */
@@ -243,8 +239,11 @@ header.hide { transform: translateY(-100%); }
   box-shadow:var(--shadow);
   animation: floatChip 4s ease-in-out infinite;
 }
-.tag-1 { top:5%; right:-5%; animation-delay:-2s; }
+.tag-1 { top:5%; left:-5%; animation-delay:-2s; }
 .tag-2 { bottom:10%; left:-5%; }
+.tag-3 { bottom:5%; right:-5%; }
+.tag-4 { top:5%; right:-5%; animation-delay:-2s; }
+
 @keyframes floatChip { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 .tag-label { display:block; font-family:'DM Mono',monospace; font-size:.6rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.2rem; }
 .tag-value { font-size:.9rem; font-weight:700; color:var(--text); }
